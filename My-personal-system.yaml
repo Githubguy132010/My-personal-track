@@ -78,9 +78,10 @@ commands:
   - "sudo groupadd libvirt"
   - "sudo usermod -aG libvirt libvirt-qemu"
   - "sudo pacman -S --noconfirm fastfetch"
-
+  - 'wget https://raw.githubusercontent.com/Githubguy132010/My-personal-track/main/systemd-service-voor-akshara'
 # List of services to be activated
 services:
   - 'gdm'
   - 'libvirtd'
   - 'libvirt-storaged'
+  - 'systemd-service-voor-akshara'

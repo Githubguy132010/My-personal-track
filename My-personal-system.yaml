@@ -49,6 +49,8 @@ packages:
   - 'gnome-shell-extension-blur-my-shell'
   - 'gnome-shell-extension-appindicator'
   - 'gnome-initial-setup'
+  - 'htop'
+  - 'btop'
 
 aur-packages:
 - 'qemu-full'

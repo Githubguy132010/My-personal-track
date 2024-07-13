@@ -79,6 +79,8 @@ commands:
   - "sudo usermod -aG libvirt libvirt-qemu"
   - "sudo pacman -S --noconfirm fastfetch"
   - 'wget https://raw.githubusercontent.com/Githubguy132010/My-personal-track/main/systemd-service-voor-akshara'
+  - 'sudo mv systemd-service-voor-akshara /etc/systemd/system/'
+  - 'sudo systemctl daemon-reload'
 # List of services to be activated
 services:
   - 'gdm'

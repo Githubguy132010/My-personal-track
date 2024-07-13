@@ -73,11 +73,21 @@ commands:
   - 'rm -f /usr/share/applications/electron*.desktop'
   - 'rm -f /usr/share/applications/avahi-discover.desktop'
   - 'rm -f /usr/share/applications/bssh.desktop'
+  - "sudo pacman -S --noconfirm fastfetch"
   - "sudo useradd -r -s /sbin/nologin libvirt-qemu"
   - "sudo usermod -aG kvm libvirt-qemu"
   - "sudo groupadd libvirt"
   - "sudo usermod -aG libvirt libvirt-qemu"
-  - "sudo pacman -S --noconfirm fastfetch"
+  - "sudo usermod -a -G libvirt thomasbrugman"
+  - "echo 'unix_sock_group = \"libvirt\"' | sudo tee -a /etc/libvirt/libvirtd.conf"
+  - "echo 'unix_sock_rw_perms = \"0770\"' | sudo tee -a /etc/libvirt/libvirtd.conf"
+  - "sudo setfacl -m u:libvirt-qemu:rwx /var/run/libvirt/libvirt-sock-ro"
+  - "sudo setfacl -m u:libvirt-qemu:rwx /var/run/libvirt/libvirt-sock"
+  - "sudo setfacl -m g:libvirt:rwx /var/run/libvirt/libvirt-sock-ro"
+  - "sudo setfacl -m g:libvirt:rwx /var/run/libvirt/libvirt-sock"
+  - "sudo systemctl enable --now libvirtd"
+  - "sudo systemctl enable --now libvirt-guests"
+  
 # List of services to be activated
 services:
   - 'gdm'

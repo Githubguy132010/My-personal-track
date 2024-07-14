@@ -56,6 +56,7 @@ packages:
   - 'gnome-initial-setup'
   - 'htop'
   - 'btop'
+  - 'spice-vdagent'
 
 # List of AUR packages to be installed
 aur-packages:
@@ -82,7 +83,6 @@ commands:
   - "echo 'unix_sock_group = \"libvirt\"' | sudo tee -a /etc/libvirt/libvirtd.conf"
   - "echo 'unix_sock_rw_perms = \"0770\"' | sudo tee -a /etc/libvirt/libvirtd.conf"
 
-  
 # List of services to be activated
 services:
   - 'gdm'

@@ -81,12 +81,7 @@ commands:
   - "sudo usermod -a -G libvirt thomasbrugman"
   - "echo 'unix_sock_group = \"libvirt\"' | sudo tee -a /etc/libvirt/libvirtd.conf"
   - "echo 'unix_sock_rw_perms = \"0770\"' | sudo tee -a /etc/libvirt/libvirtd.conf"
-  - "sudo setfacl -m u:libvirt-qemu:rwx /var/run/libvirt/libvirt-sock-ro"
-  - "sudo setfacl -m u:libvirt-qemu:rwx /var/run/libvirt/libvirt-sock"
-  - "sudo setfacl -m g:libvirt:rwx /var/run/libvirt/libvirt-sock-ro"
-  - "sudo setfacl -m g:libvirt:rwx /var/run/libvirt/libvirt-sock"
-  - "sudo systemctl enable --now libvirtd"
-  - "sudo systemctl enable --now libvirt-guests"
+
   
 # List of services to be activated
 services:

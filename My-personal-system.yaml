@@ -57,6 +57,7 @@ packages:
   - 'htop'
   - 'btop'
   - 'spice-vdagent'
+  - 'android-sdk-platform-tools'
 
 # List of AUR packages to be installed
 aur-packages:
